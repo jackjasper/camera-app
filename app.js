@@ -5,6 +5,13 @@ const cameraView = document.querySelector("#camera--view"),
 cameraOutput = document.querySelector("#camera--output"),
 cameraSensor = document.querySelector("#camera--sensor"),
 cameraTrigger = document.querySelector("#camera--trigger")
+
+// Main start
+function mainStart() {
+    cameraStart();
+    run();
+}
+
 // Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
@@ -27,10 +34,12 @@ function takePic() {
     cameraOutput.classList.add("taken");
 };
 
-var i;
-for (i = 0; i < 1000; i++) {
-    takePic();
+function run() {
+    var i;
+    for (i = 0; i < 1000; i++) {
+        takePic();
+    }
 }
 
 // Start the video stream when the window loads
-window.addEventListener("load", cameraStart, false);
+window.addEventListener("load", mainStart, false);
