@@ -1,3 +1,6 @@
+// From here, modified:
+// https://blog.prototypr.io/make-a-camera-web-app-tutorial-part-1-ec284af8dddf
+
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
@@ -9,7 +12,7 @@ cameraTrigger = document.querySelector("#camera--trigger")
 // Main start
 function mainStart() {
     cameraStart();
-    run();
+    run;
 }
 
 // Access the device camera and stream to cameraView
