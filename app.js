@@ -18,12 +18,19 @@ function cameraStart() {
            });
 }
 // Take a picture when cameraTrigger is tapped
-cameraTrigger.onclick = function() {
+//cameraTrigger.onclick = 
+function takePic() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-    cameraOutput.src = 1//cameraSensor.toDataURL("image/webp");
+    cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
 };
+
+var i;
+for (i = 0; i < 1000; i++) {
+    takePic();
+}
+
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
